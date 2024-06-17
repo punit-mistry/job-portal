@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# JobRow Component
 
-## Getting Started
+## Overview
 
-First, run the development server:
+The `JobRow` component is a reusable React component designed to display job listings in a clean and structured format. It leverages modern CSS utility classes from Tailwind CSS to ensure a responsive and visually appealing layout.
+
+## Features
+
+- **Responsive Design:** The component is fully responsive, making it suitable for various screen sizes.
+- **Semantic HTML:** Utilizes semantic HTML elements for better accessibility and SEO.
+- **Flexible Styling:** Easily customizable through Tailwind CSS classes.
+- **TypeScript Support:** Includes TypeScript for enhanced type safety and developer experience.
+
+## Installation
+
+To use the `JobRow` component in your project, you can install it via npm:
+```bash
+npm install job-row-component
+```
+Or with Yarn:
+```bash
+yarn add job-row-component
+```
+## Usage
+Here's a basic example of how to use the JobRow component in your React application:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+import React from 'react';
+import { JobRow } from 'job-row-component';
+
+const job = {
+  company: "Amazon",
+  title: "Product Manager",
+  location: "Remote",
+  city: "New York, IN",
+  type: "Full Time",
+  postedDate: "2 days ago",
+  logo: "https://logolook.net/wp-content/uploads/2021/06/Symbol-Amazon-500x500.png"
+};
+
+function App() {
+  return (
+    <div className="App">
+      <JobRow job={job} />
+    </div>
+  );
+}
+
+export default App;
+
 ```
+### Job Object Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The job object should have the following structure:
+```bash
+interface Job {
+  company: string;
+  title: string;
+  location: string;
+  city: string;
+  type: string;
+  postedDate: string;
+  logo: string;
+}
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+## Thank you for viewing the project and for your interest. I appreciate your time!
